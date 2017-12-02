@@ -98,10 +98,10 @@
             Tags = @("PoshBot", "ChatOps", "Bot", "Spark")
     
             # A URL to the license for this module.
-            # LicenseUri = ""
+            LicenseUri = "https://github.com/andrewtchilds/PoshBot.Spark.Backend/blob/master/LICENSE"
     
             # A URL to the main website for this project.
-            # ProjectUri = ""
+            ProjectUri = "https://github.com/andrewtchilds/PoshBot.Spark.Backend"
     
             # A URL to an icon representing this module.
             # IconUri = ""
