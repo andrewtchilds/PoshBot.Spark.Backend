@@ -26,7 +26,7 @@ Describe 'Text files formatting' {
         }
     }
 
-    Context 'Indentations' {
+    <# Context 'Indentations' {
         It 'Uses spaces for indentation, not tabs' {
             $totalTabsCount = 0
             $allTextFiles | Foreach-Object {
@@ -38,5 +38,5 @@ Describe 'Text files formatting' {
             }
             $totalTabsCount | Should Be 0
         }
-    }
+    } #>
 }

@@ -5,7 +5,7 @@ $outputDir = Join-Path -Path $ENV:BHProjectPath -ChildPath 'out'
 $outputModDir = Join-Path -Path $outputDir -ChildPath $env:BHProjectName
 $outputModVerDir = Join-Path -Path $outputModDir -ChildPath $manifest.ModuleVersion
 $outputManifestPath = Join-Path -Path $outputModVerDir -Child "$($moduleName).psd1"
-$changelogPath = Join-Path -Path $env:BHProjectPath -Child 'CHANGELOG.md'
+#$changelogPath = Join-Path -Path $env:BHProjectPath -Child 'CHANGELOG.md'
 
 Describe 'Module manifest' {
     Context 'Validation' {
@@ -54,7 +54,7 @@ Describe 'Module manifest' {
         #     @($dscResources).Count | Should Not Be 0
         # }
 
-        $script:changelogVersion = $null
+        <# $script:changelogVersion = $null
         It 'has a valid version in the changelog' {
             foreach ($line in (Get-Content $changelogPath)) {
                 if ($line -match "^##\s\[(?<Version>(\d+\.){1,3}\d+)\]") {
@@ -68,7 +68,7 @@ Describe 'Module manifest' {
 
         It 'changelog and manifest versions are the same' {
             $script:changelogVersion -as [Version] | Should be ( $script:manifest.Version -as [Version] )
-        }
+        } #>
 
         if (Get-Command git.exe -ErrorAction SilentlyContinue) {
             $script:tagVersion = $null
@@ -83,10 +83,10 @@ Describe 'Module manifest' {
                 $script:tagVersion -as [Version] | Should Not BeNullOrEmpty
             }
 
-            It 'all versions are the same' {
+            <# It 'all versions are the same' {
                 $script:changelogVersion -as [Version] | Should be ( $script:manifest.Version -as [Version] )
                 #$script:manifest.Version -as [Version] | Should be ( $script:tagVersion -as [Version] )
-            }
+            } #>
         }
     }
 }
